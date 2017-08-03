@@ -24,6 +24,7 @@
     background-color: #6ab344;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     /*阴影*/
     box-shadow: 2px 5px 6px #ddd;

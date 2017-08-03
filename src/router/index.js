@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/title'
+      redirect: '/test'
     },
     {
       path: '/home',
@@ -16,6 +16,14 @@ export default new Router({
     {
       path: '/title',
       component: r => require(['../components/common/commontitle.vue'], r)
+    },
+    {
+      path: '/menu',
+      component: r => require(['../components/common/menu.vue'], r)
+    },
+    {
+      path: '/test',
+      component: r => require(['../test/test.vue'], r)
     }
   ]
 })
