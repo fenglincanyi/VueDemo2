@@ -124,7 +124,6 @@
 
   .navigation {
     padding: 16px 0;
-    /*padding: 16px 16[x];*/
     height: 100%;
     list-style-type: none;
     background: #424242;
@@ -143,7 +142,6 @@
 
   .subMenu {
     position: relative;
-
     background-color: #fff;
     padding: 0;
     /*z-index: 1;*/
