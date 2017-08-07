@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/account'
+      redirect: '/home'
     },
     {
       path: '/home',
@@ -18,12 +18,8 @@ export default new Router({
       component: r => require(['../components/common/commontitle.vue'], r)
     },
     {
-      path: '/menu',
-      component: r => require(['../components/common/menu.vue'], r)
-    },
-    {
-      path: '/account',
-      component: r => require(['../components/common/account.vue'], r)
+      path: '/sidebar',
+      component: r => require(['../components/common/sidebar.vue'], r)
     },
     {
       path: '/test',
