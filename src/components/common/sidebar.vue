@@ -8,7 +8,8 @@
                v-bind:style="{width: '24px',height: '24px','margin-right':'20px',transition: 'transform .2s', transform: menu.state ? 'rotateZ(180deg)' : 'rotateZ(0deg)'}"/>
         </div>
         <ul class="subMenu" v-bind:style="{height: menu.state ? menu.subList.length*50+'px':0}">
-          <a class="menuItemAa" v-for="item in menu.subList" href="commontitle.vue">{{item}}</a>
+          <router-link class="menuItemAa" v-for="item in menu.subList" :key="item" :to="item">{{item}}</router-link>
+          <!--<a class="menuItemAa" v-for="item in menu.subList" href="javascript:void(0);" @click="clickItem(item)">{{item}}</a>-->
         </ul>
       </li>
     </ul>
@@ -27,10 +28,15 @@
         data: [
           {type: '首页', state: true, subList: ['Android', 'Wear', 'TV', 'Auto', 'Things']},
           {type: '开发', state: false, subList: ['培训', 'API', '参考', 'Android Studio']},
-          {type: '分发', state: false, subList: ['Google Play', 'Play 控制台', '最佳做法']},
+          {type: '分发', state: false, subList: ['Google Play', 'test2', 'test1']},
           {type: '关于', state: false, subList: []}
         ],
         menuClass: true
+      }
+    },
+    methods: {
+      clickItem: function (item) {
+        this.$emit('menuclick', item)
       }
     }
   }

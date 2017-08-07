@@ -13,7 +13,7 @@
       <img src="../../assets/iii.png" style="width: 50px; height: 50px; border-radius: 50%"/>
       <span class="nameClass">{{username}}</span>
     </div>
-    <div class="titleClass">{{titleStr}}</div>
+    <div class="titleClass">{{titleName}}</div>
 
 
     <a href="javascript:void(0)" @click="settingShow = !settingShow">
@@ -48,8 +48,10 @@
         this.settingShow = !this.settingShow
       }
     },
-    created: function () {
-      this.titleStr = this.$route.path.replace('/', '')
+    computed: {
+      titleName: function () {
+        return this.$route.path.replace('/', '')
+      }
     }
   }
 </script>
