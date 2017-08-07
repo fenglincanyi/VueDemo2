@@ -49,7 +49,6 @@
 
   .menuLayout {
     width: 250px;
-    height: 100%;
     display: flex;
     bottom: 0;
     flex-direction: column;
