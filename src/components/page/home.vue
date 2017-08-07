@@ -1,7 +1,7 @@
 <template>
   <div class="wapper">
-    <commontitle style="position: fixed; z-index: 3"></commontitle>
-    <sidebar style="position: fixed;top: 64px;z-index: 2"></sidebar>
+    <commontitle style="position: fixed; z-index: 3" @menuShow="handleShow"></commontitle>
+    <sidebar ref="sidebar" class="sidebarClass" v-bind:style="{width: isShowMenu ? '250px':0}"></sidebar>
   </div>
 </template>
 <script>
@@ -10,9 +10,19 @@
 
   export default{
     name: 'home',
+    data: function () {
+      return {
+        isShowMenu: true
+      }
+    },
     components: {
       commontitle,
       sidebar
+    },
+    methods: {
+      handleShow: function () {
+        this.isShowMenu = !this.isShowMenu
+      }
     }
   }
 </script>
@@ -20,5 +30,12 @@
   .wapper {
     width: 100%;
     height: 100%;
+  }
+
+  .sidebarClass {
+    position: fixed;
+    top: 64px;
+    z-index: 2;
+    transition: width .2s;
   }
 </style>

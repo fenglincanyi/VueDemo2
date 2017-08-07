@@ -1,6 +1,6 @@
 <template>
   <div class="title-container">
-    <a>
+    <a class="menuIcon" href="javascript:void(0);" @click="handleMenu">
     <span class="dac-nav-hamburger">
       <span class="dac-nav-hamburger-top"></span>
       <span class="dac-nav-hamburger-mid"></span>
@@ -23,6 +23,11 @@
       return {
         titleStr: '',
         username: '张三'
+      }
+    },
+    methods: {
+      handleMenu: function () {
+        this.$emit('menuShow', 'menu显示隐藏')
       }
     },
     created: function () {
@@ -49,12 +54,18 @@
     color: #eceff1 !important;
   }
 
-  .titleClass{
+  .menuIcon {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: underline;
+  }
+
+  .titleClass {
     margin-left: 36px;
     line-height: 64px;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 20px;
-    text-transform:capitalize;
+    text-transform: capitalize;
     color: #fff;
   }
 
