@@ -15,7 +15,7 @@
     <!-- 平移动画demo示例-->
     <!--<img src="../../assets/logo.png"-->
     <!--v-bind:style="{transition: '0.3s ease', transform: menuClass ? 'translate(0,30px)' : 'translate(0,-30px)'}"/>-->
-    <!--<img/>-->
+    <!--</img>-->
   </div>
 </template>
 <script>
@@ -71,20 +71,18 @@
 
   .navigation {
     padding: 16px 0 0 0;
-    height: 100%;
     list-style-type: none;
     background-color: #EFEFEF;
   }
 
   .menuItem {
     list-style-type: none;
-    margin: 0 0 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: #EFEFEF;
     /*z-index: 2;*/
-    position: relative;
+    /*position: relative;*/
   }
 
   .subMenu {
@@ -92,7 +90,7 @@
     background-color: #fff;
     padding: 0;
     /*z-index: 1;*/
-    overflow: hidden;
+    overflow: auto;
     display: block;
     transition: height .3s;
     white-space: nowrap;
