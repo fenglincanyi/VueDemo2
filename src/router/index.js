@@ -22,20 +22,28 @@ export default new Router({
       component: r => require(['../components/common/sidebar.vue'], r)
     },
     {
-      path: '/content',
+      path: '/',
       component: r => require(['../components/page/home.vue'], r),
       children: [
         {
-          path: '/test',
-          component: r => require(['../test/test.vue'], r)
+          path: '/android',
+          component: r => require(['../components/page/form.vue'], r)
         },
         {
-          path: '/test1',
-          component: r => require(['../test/test1.vue'], r)
+          path: '/wear',
+          component: r => require(['../test/wear.vue'], r)
         },
         {
-          path: '/test2',
-          component: r => require(['../test/test2.vue'], r)
+          path: '/tv',
+          component: r => require(['../test/tv.vue'], r)
+        },
+        {
+          path: '/things',
+          component: r => require(['../test/things.vue'], r)
+        },
+        {
+          path: '/train',
+          component: r => require(['../test/train.vue'], r)
         }
       ]
     }

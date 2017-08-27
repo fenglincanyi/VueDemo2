@@ -8,7 +8,8 @@
                v-bind:style="{width: '24px',height: '24px','margin-right':'20px',transition: 'transform .2s', transform: menu.state ? 'rotateZ(180deg)' : 'rotateZ(0deg)'}"/>
         </div>
         <ul class="subMenu" v-bind:style="{height: menu.state ? menu.subList.length*50+'px':0}">
-          <router-link class="menuItemAa" v-for="item in menu.subList" :key="item" :to="item">{{item}}</router-link>
+          <router-link class="menuItemAa" v-for="item in menu.subList" :key="item" :to="item.path">{{item.name}}
+          </router-link>
           <!--<a class="menuItemAa" v-for="item in menu.subList" href="javascript:void(0);" @click="clickItem(item)">{{item}}</a>-->
         </ul>
       </li>
@@ -26,9 +27,35 @@
       return {
         showUL: true,
         data: [
-          {type: '首页', state: true, subList: ['Android', 'Wear', 'TV', 'Auto', 'Things']},
-          {type: '开发', state: false, subList: ['培训', 'API', '参考', 'Android Studio']},
-          {type: '分发', state: false, subList: ['Google Play', 'test2', 'test1']},
+          {
+            type: '首页',
+            state: true,
+            subList: [
+              {name: 'Android', path: 'android'},
+              {name: 'Wear', path: 'wear'},
+              {name: 'TV', path: 'tv'},
+              {name: 'Things', path: 'things'}
+            ]
+          },
+          {
+            type: '开发',
+            state: false,
+            subList: [
+              {name: '培训', path: 'train'},
+              {name: 'API', path: 'api'},
+              {name: '参考', path: 'reference'},
+              {name: 'Android Studio', path: 'as'}
+            ]
+          },
+          {
+            type: '分发',
+            state: false,
+            subList: [
+              {name: 'Google Play', path: 'googleplay'},
+              {name: '工具', path: 'tool'},
+              {name: '控制台', path: 'console'}
+            ]
+          },
           {type: '关于', state: false, subList: []}
         ],
         menuClass: true
@@ -59,7 +86,7 @@
     bottom: 0;
     flex-direction: column;
     margin: 0;
-    background-color: #fff;
+    background-color: #EFEFEF;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     overflow-y: scroll;
   }
